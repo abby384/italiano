@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e0f12">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Italiano">
+<title>Italiano — cheat sheet</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='33' height='100' fill='%23009246'/><rect x='33' width='34' height='100' fill='%23f1f1f1'/><rect x='67' width='33' height='100' fill='%23ce2b37'/></svg>">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
+  <h1>Italiano</h1>
+  <span class="sub">foundations</span>
+</header>
+
+<main id="views">
+
+  <!-- VERBS -->
+  <section class="view" id="view-verbs">
+    <div class="intro">
+      <h2>Verbs</h2>
+      <p>Three endings, one system. Tap any card to open the full table.</p>
+    </div>
+    <div id="regular-verbs"></div>
+    <h3 class="divider">How it works</h3>
+    <div id="verb-rules"></div>
+    <h3 class="divider">Past tenses</h3>
+    <div id="past-rules"></div>
+  </section>
+
+  <!-- IRREGULARS -->
+  <section class="view" id="view-irregular" hidden>
+    <div class="intro">
+      <h2>Irregulars</h2>
+      <p>These seventeen cover most of what you'll say out loud. Present tense first, since that's where the damage is.</p>
+    </div>
+    <div id="irregular-verbs"></div>
+    <h3 class="divider">Irregular past participles</h3>
+    <p class="note">For the passato prossimo. No pattern — just absorb them.</p>
+    <div id="irreg-pp" class="pp-grid"></div>
+  </section>
+
+  <!-- GENDER -->
+  <section class="view" id="view-gender" hidden>
+    <div class="intro">
+      <h2>Gender &amp; number</h2>
+      <p>Masculine or feminine. There is no third option.</p>
+    </div>
+    <div id="gender-rules"></div>
+    <h3 class="divider">Nouns that switch gender in the plural</h3>
+    <p class="note">Masculine singular, feminine plural. These are the fossils of Latin neuter — the closest thing Italian has to one.</p>
+    <div id="odd-plurals" class="pp-grid"></div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="view" id="view-articles" hidden>
+    <div class="intro">
+      <h2>Articles</h2>
+      <p>Chosen by the <em>sound</em> that follows, not the meaning.</p>
+    </div>
+    <h3 class="divider">Definite — the</h3>
+    <div id="def-articles"></div>
+    <h3 class="divider">Indefinite — a / an</h3>
+    <div id="indef-articles"></div>
+    <h3 class="divider">Rules worth knowing</h3>
+    <div id="article-rules"></div>
+    <h3 class="divider">Preposition + article</h3>
+    <p class="note">These fuse into one word. Non-negotiable — <em>di il</em> does not exist.</p>
+    <div class="table-scroll"><table id="prep-table"></table></div>
+  </section>
+
+  <!-- WORDS -->
+  <section class="view" id="view-words" hidden>
+    <div class="intro">
+      <h2>Words</h2>
+      <p>The connective tissue. Tap for how it's actually used.</p>
+    </div>
+    <div id="word-groups"></div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="view" id="view-quiz" hidden>
+    <div class="intro">
+      <h2>Drill</h2>
+      <p>Type the answer. Accents optional — it'll show you the correct spelling either way.</p>
+    </div>
+
+    <div class="mode-row" id="quiz-modes"></div>
+
+    <div class="quiz-card">
+      <div class="score-row">
+        <span id="score">0 / 0</span>
+        <span id="streak"></span>
+      </div>
+      <div class="prompt" id="q-prompt">Pick a drill above.</div>
+      <div class="prompt-sub" id="q-sub"></div>
+      <form id="q-form" autocomplete="off">
+        <input type="text" id="q-input" placeholder="your answer" autocapitalize="none" autocorrect="off" spellcheck="false" disabled>
+        <button type="submit" id="q-submit" disabled>Check</button>
+      </form>
+      <div class="feedback" id="q-feedback"></div>
+      <button type="button" class="skip" id="q-skip" hidden>Skip &rsaquo;</button>
+    </div>
+  </section>
+
+</main>
+
+<nav class="tabs" id="tabs">
+  <button data-view="verbs" class="active"><span>Verbs</span></button>
+  <button data-view="irregular"><span>Irreg.</span></button>
+  <button data-view="gender"><span>Gender</span></button>
+  <button data-view="articles"><span>Articles</span></button>
+  <button data-view="words"><span>Words</span></button>
+  <button data-view="quiz"><span>Drill</span></button>
+</nav>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
