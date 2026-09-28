@@ -16,10 +16,16 @@
 <header class="topbar">
   <div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
   <h1>Italiano</h1>
-  <span class="sub">foundations</span>
+  <div class="seg" id="mode">
+    <button data-mode="train" class="on">Train</button>
+    <button data-mode="ref">Reference</button>
+  </div>
 </header>
 
 <main id="views">
+
+  <!-- TRAIN -->
+  <section class="view" id="view-train"></section>
 
   <!-- VERBS -->
   <section class="view" id="view-verbs">
@@ -122,5 +128,6 @@
 
 <script src="data.js"></script>
 <script src="app.js"></script>
+<script type="module" src="train.js"></script>
 </body>
 </html>

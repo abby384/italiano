@@ -229,3 +229,89 @@ td:not(:first-child){color:var(--green);font-weight:520}
   border-top:2px solid transparent;margin-top:-1px;
 }
 .tabs button.active{color:var(--txt);border-top-color:var(--green)}
+
+/* ================= TRAIN MODE ================= */
+
+body.no-tabs{padding-bottom:calc(env(safe-area-inset-bottom) + 24px)}
+
+/* segmented mode switch */
+.seg{display:flex;margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:2px;gap:2px}
+.seg button{
+  background:none;border:none;color:var(--dim);
+  font-family:inherit;font-size:12.5px;font-weight:620;
+  padding:6px 12px;border-radius:7px;cursor:pointer;transition:.15s;
+}
+.seg button.on{background:var(--card-hi);color:var(--txt);box-shadow:0 1px 2px rgba(0,0,0,.3)}
+
+/* start button */
+.start-btn{
+  display:flex;flex-direction:column;align-items:flex-start;gap:3px;
+  width:100%;text-align:left;cursor:pointer;font-family:inherit;
+  background:linear-gradient(180deg,#3ec98a,#2fae74);
+  color:#06180f;border:none;border-radius:15px;padding:17px 19px;margin-bottom:14px;
+}
+.start-btn:active{transform:scale(.99)}
+.start-btn.secondary{background:var(--card);border:1px solid var(--line);color:var(--txt)}
+.start-main{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.start-sub{font-size:13px;opacity:.72;font-weight:520}
+
+/* stat tiles */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 12px;text-align:center}
+.stat b{display:block;font-size:22px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat i{display:block;font-style:normal;font-size:11px;color:var(--dimmer);margin-top:3px;letter-spacing:.03em}
+
+/* rule heatmap */
+.heat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:6px 13px}
+.heat-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)}
+.heat-row:last-child{border-bottom:none}
+.heat-label{font-size:13.5px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.heat-bar{width:78px;height:6px;background:var(--line);border-radius:3px;overflow:hidden;flex:none}
+.heat-bar i{display:block;height:100%;border-radius:3px}
+.heat-bar i.good{background:var(--green)}
+.heat-bar i.mid{background:#e0a94a}
+.heat-bar i.bad{background:var(--red)}
+.heat-pct{font-size:11.5px;color:var(--dimmer);width:32px;text-align:right;font-variant-numeric:tabular-nums;flex:none}
+
+/* session shape */
+.shape{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:4px 13px}
+.shape-row{display:flex;align-items:baseline;gap:11px;padding:9px 0;border-bottom:1px solid var(--line)}
+.shape-row:last-child{border-bottom:none}
+.shape-row b{font-size:12px;color:var(--green);font-weight:680;width:22px;flex:none;font-variant-numeric:tabular-nums}
+.shape-row span{font-size:14px;font-weight:580}
+.shape-row i{font-style:normal;font-size:12.5px;color:var(--dimmer);margin-left:auto;text-align:right}
+
+/* drill header */
+.drill-top{margin-bottom:13px}
+.phase-line{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+#phase-name{font-size:12px;font-weight:660;text-transform:uppercase;letter-spacing:.09em;color:var(--accent)}
+#phase-count{font-size:12px;color:var(--dimmer);font-variant-numeric:tabular-nums}
+.timebar{height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.timebar i{display:block;height:100%;background:var(--green);border-radius:2px;transition:width .3s ease}
+
+#d-form{display:flex;gap:8px;margin-top:16px}
+#d-input{
+  flex:1;min-width:0;background:var(--bg);color:var(--txt);
+  border:1px solid var(--line);border-radius:10px;
+  padding:12px 13px;font-size:16px;font-family:inherit;
+}
+#d-input:focus{outline:none;border-color:var(--accent)}
+#d-input:disabled{opacity:.45}
+#d-submit{
+  background:var(--accent);color:#0c1220;border:none;border-radius:10px;
+  padding:12px 17px;font-size:15px;font-weight:660;font-family:inherit;cursor:pointer;flex:none;
+}
+.drill-actions{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+
+/* ghost buttons */
+.ghost{
+  background:var(--card);border:1px solid var(--line);color:var(--dim);
+  font-family:inherit;font-size:13px;font-weight:600;
+  padding:10px 14px;border-radius:10px;cursor:pointer;
+}
+.ghost.wide{width:100%}
+.danger-row{display:flex;gap:8px;margin:26px 0 8px}
+.danger-row .ghost{flex:1}
+
+/* display:flex on .tabs beats the bare [hidden] attribute — make it explicit */
+[hidden]{display:none!important}

@@ -11,6 +11,31 @@ const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(
 
 /* ============ TABS ============ */
 
+const REF_VIEWS = ["verbs", "irregular", "gender", "articles", "words", "quiz"];
+
+function setMode(mode) {
+  const train = mode === "train";
+  document.querySelectorAll("#mode button").forEach(b =>
+    b.classList.toggle("on", b.dataset.mode === mode));
+  $("#view-train").hidden = !train;
+  $("#tabs").hidden = train;
+  document.body.classList.toggle("no-tabs", train);
+  if (!train) {
+    const active = $("#tabs button.active") || $("#tabs button");
+    REF_VIEWS.forEach(v => {
+      $("#view-" + v).hidden = "view-" + v !== "view-" + active.dataset.view;
+    });
+  } else {
+    REF_VIEWS.forEach(v => { $("#view-" + v).hidden = true; });
+  }
+  window.scrollTo(0, 0);
+}
+
+$("#mode").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (b) setMode(b.dataset.mode);
+});
+
 const tabs = $("#tabs");
 tabs.addEventListener("click", e => {
   const btn = e.target.closest("button");
@@ -294,3 +319,6 @@ $("#q-skip").addEventListener("click", () => {
   }
   setTimeout(next, awaiting ? 0 : 700);
 });
+
+/* default to Train — the reference is the secondary mode now */
+setMode("train");
