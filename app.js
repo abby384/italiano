@@ -272,7 +272,7 @@ function check() {
   } else {
     streak = 0;
     fb.className = "feedback no";
-    fb.innerHTML = `<b>${esc(current.a)}</b><span>You wrote: ${esc(given.trim())}</span>`;
+    fb.innerHTML = `Not quite — <b>${esc(current.a)}</b><span>You wrote: ${esc(given.trim())}</span>`;
   }
 
   inp.disabled = true;
